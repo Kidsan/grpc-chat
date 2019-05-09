@@ -8,14 +8,17 @@ import (
 	"golang.org/x/net/context"
 )
 
-type server struct {
+/*ServerThing is the server type*/
+type ServerThing struct {
 }
 
-func Server() *server {
-
+/*Server object */
+func Server() *ServerThing {
+	return &ServerThing{}
 }
 
-func (s *server) Run(ctx context.Context) error {
+/*Run starts the server */
+func (s *ServerThing) Run(ctx context.Context) error {
 	ctx, cancel := context.WithCancel(ctx)
 	defer cancel()
 
